@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Icube. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<add id="Icube_Training::training" title="Training" module="Icube_Training" sortOrder="30" resource="Icube_Training::training"/>
+        <add id="Icube_Training::trainee" title="Manage" module="Icube_Training" parent="Icube_Training::training" sortOrder="21" action="icube_training/trainee/index" resource="Icube_Training::trainee"/>
+        <add id="Icube_Training::trainings" title="Test" translate="title" module="Icube_Training" sortOrder="10" parent="Icube_Training::training" dependsOnModule="Icube_Training" resource="Icube_Training::training"/>
+    </menu>
+</config>
+
+<!-- 
+-The id attribute is the identifier for this note. It’s a unique string and should follow the format: {Vendor_ModuleName}::{menu_description}.
+-The title attribute is the text which will be shown on the menu bar.
+-The module attribute is defined the module which this menu is belong to.
+-The sortOrder attribute is defined the position of the menu. Lower value will display on top of menu.
+-The parent attribute is an Id of other menu node (Icube_Training::training).
+-The action attribute will define the url of the page which this menu link to.
+-The resource attribute is used to defined the ACL rule which the admin user must have in order to see and access this menu.  -->

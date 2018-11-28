@@ -1,0 +1,16 @@
+<table id="columns-table" class="data-grid .admin__control-table" cellspacing="0" cellpadding="0">
+	<thead>
+		<tr class="headings">
+			<th class="type-title data-grid-th" style="width:50%"><?php echo __('Name')?></th>
+			<th class="type-title data-grid-th" style="width:50%"><?php echo __('Division')?></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($this->getTraineeCollection() as $trainees) : ?>
+		<tr>
+			<td><?php echo $trainees->getName() ?></td>
+			<td><?php echo $trainees->getDivision() ?></td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>

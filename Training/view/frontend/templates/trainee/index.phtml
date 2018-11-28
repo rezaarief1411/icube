@@ -1,0 +1,20 @@
+<div class="page-heading">
+	<h1><?php echo __('app/code/Icube/Training/view/frontend/templates/trainee/index.phtml')?></h1>
+</div>
+            <h1><?php echo 'name '.$this->getTraineeName(1) ?></h1>
+<table>
+    <thead>
+        <tr>
+            <th><?php echo __('Name')?></th>
+            <th><?php echo __('Division')?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($this->getTraineeCollection() as $trainees) : ?>
+        <tr>
+            <td><?php echo $trainees->getName() ?></td>
+            <td><?php echo $trainees->getDivision() ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

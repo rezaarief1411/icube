@@ -1,0 +1,21 @@
+<div class="page-heading">
+	<h2><?php echo __('app/code/Icube/Training/view/frontend/templates/car/index.phtml')?></h2>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th><?php echo __('car vendor id')?></th>
+			<th><?php echo __('car name')?></th>
+			<th><?php echo __('vendor name');?></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->getCarCollection() as $cars) : ?>
+		<tr>
+			<td><?php echo $cars->getCar_vendor_id()?></td>
+			<td><?php echo $cars->getCar_name()?></td>
+			<td><?php echo $cars->getCar_vendor_name()?></td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>

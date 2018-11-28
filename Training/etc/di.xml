@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="training_cli" xsi:type="object">Icube\Training\Console\Sayhello</item>
+			</argument>
+		</arguments>
+	</type>
+
+ 	<preference for="Icube\Training\Block\Hello" type="Icube\Training\Block\Override\Hello" />
+
+ 	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="icube_training_trainee_listing_data_source" xsi:type="string">Icube\Training\Model\ResourceModel\Trainee\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Icube\Training\Model\ResourceModel\Trainee\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">icube_trainee</argument><!-- base table -->
+            <argument name="resourceModel" xsi:type="string">Icube\Training\Model\ResourceModel\Trainee</argument>
+        </arguments>
+    </virtualType>
+
+ 	
+</config>

@@ -1,0 +1,21 @@
+<div class="page-heading">
+	<h1><?php echo __('app/code/Icube/Training/view/frontend/templates/employee/index.phtml')?></h1>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th><?php echo __('firstname')?></th>
+			<th><?php echo __('lastname')?></th>
+			<th><?php echo __('Address')?></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->getEmployeeCollection() as $employees) : ?>
+		<tr>
+			<td><?php echo $employees->getFirsname()?></td>
+			<td><?php echo $employees->getLastname()?></td>
+			<td><?php echo $employees->getAddress()?></td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
